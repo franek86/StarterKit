@@ -1,6 +1,6 @@
 $(function(){
   preloader();
-  mesHeight();
+  // mesHeight();
 });
 
 function preloader(){
@@ -14,10 +14,10 @@ function preloader(){
 
 }
 
-function mesHeight(){
-  var section = $('section').height();
-  $('span').html(section);
-}
+// function mesHeight(){
+//   var section = $('section').height();
+//   $('span').html(section);
+// }
 
 
 $(window).on("load",function(){
