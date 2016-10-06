@@ -1,6 +1,10 @@
 $(function(){
   preloader();
+<<<<<<< HEAD
   // mesHeight();
+=======
+  //mesHeight();
+>>>>>>> origin/gh-pages
 });
 
 function preloader(){
@@ -14,10 +18,17 @@ function preloader(){
 
 }
 
+<<<<<<< HEAD
 // function mesHeight(){
 //   var section = $('section').height();
 //   $('span').html(section);
 // }
+=======
+//function mesHeight(){
+//  var section = $('section').height();
+//  $('span').html(section);
+//}
+>>>>>>> origin/gh-pages
 
 
 $(window).on("load",function(){
