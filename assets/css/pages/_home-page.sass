@@ -1,4 +1,5 @@
 section#header
+  position: relative
   background:
     color: #B4DAFA
 
@@ -57,7 +58,6 @@ section#header
       both
 
   .ufo-wrapper
-    position: relative
     max-width: 320px
     text-align: center
     margin: 0 auto
@@ -69,14 +69,13 @@ section#header
       opacity: 0
 
   .buildings
-    position: relative
     margin: 0 auto
     text-align: center
 
     .alien
       position: absolute
-      top: 0
-      left:calc(50% - 30px)
+      left: 50%
+      margin-left: -30px
       width: 60px
       opacity: 0
       z-index: 9
@@ -118,7 +117,7 @@ section#header
     opacity: 0
 
   100%
-    transform: translateY(240px)
+    transform: translateY(400px)
     opacity: 1
 
 @keyframes moveCloudes
@@ -152,7 +151,7 @@ section#header
         opacity: 0
 
       100%
-        transform: translateY(184px)
+        transform: translateY(277px)
         opacity: 1
 
 
@@ -160,7 +159,6 @@ section#header
 
 @media only screen and (max-width: 736px)
   section#header
-    height: auto
 
     .header-heading
       h1
