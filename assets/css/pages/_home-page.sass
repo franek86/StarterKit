@@ -20,42 +20,16 @@ section#header
       margin: 0
 
   .sky
-
-    .cloud
-      position: absolute
-      overflow-x: hidden
-
-    .cloud:nth-child(1)
-        width: 100px
-        top: 10%
-        opacity: .95
-        animation: moveCloudes 45s linear infinite
-
-    .cloud:nth-child(2)
-        width: 200px
-        top: 25%
-        animation: moveCloudes 52s linear infinite
-
-    .cloud:nth-child(3)
-        width: 250px
-        top: 20%
-        opacity: .8
-        animation: moveCloudes 55s linear infinite
-
-    .cloud:nth-child(4)
-        width: 300px
-        top: 40%
-        opacity: .75
-        animation: moveCloudes 60s linear infinite
-
-    .cloud:nth-child(5)
-        width: 275px
-        top: 0%
-        opacity: 1
-        animation: moveCloudes 70s linear infinite
-
-    .clear
-      both
+    height: 100%
+    width: 100%
+    position: absolute
+    top: 0
+    opacity: .5
+    background:
+      image: url('../img/stars.svg')
+      size: cover
+      repeat: repeat-x
+    animation: stars 5s ease 2s fowards
 
   .ufo-wrapper
     max-width: 320px
@@ -100,21 +74,21 @@ section#header
   100%
     opacity: 1
 
-// @keyframes fadeAlien
-//   0%
-//     transform: translateY(0%)
-//     opacity: 0
+@keyframes stars
+  0%
+    transform: translateY(0%)
+    opacity: 0
+
+  100%
+    transform: translateY(400px)
+    opacity: 1
+
+// @keyframes moveCloudes
+//   from
+//     left: 0px
 //
-//   100%
-//     transform: translateY(400px)
-//     opacity: 1
-
-@keyframes moveCloudes
-  from
-    left: 0px
-
-  to
-    left: 100%
+//   to
+//     left: 100%
 
 @keyframes landUfo
   0%
