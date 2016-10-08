@@ -2,6 +2,8 @@ section#header
   position: relative
   background:
     color: #B4DAFA
+    image: url('../img/see.jpeg')
+    size: cover
 
   .header-heading
     padding-top: 60px
@@ -19,17 +21,6 @@ section#header
       font-size: 1rem
       margin: 0
 
-  .sky
-    height: 100%
-    width: 100%
-    position: absolute
-    top: 0
-    opacity: .5
-    background:
-      image: url('../img/stars.svg')
-      size: cover
-      repeat: repeat-x
-    animation: stars 5s ease 2s fowards
 
   .ufo-wrapper
     max-width: 320px
@@ -83,12 +74,6 @@ section#header
     transform: translateY(400px)
     opacity: 1
 
-// @keyframes moveCloudes
-//   from
-//     left: 0px
-//
-//   to
-//     left: 100%
 
 @keyframes landUfo
   0%
@@ -107,15 +92,6 @@ section#header
     .buildings
       .alien
         width: 40px
-
-    // @keyframes fadeAlien
-    //   0%
-    //     transform: translateY(0%)
-    //     opacity: 0
-    //
-    //   100%
-    //     transform: translateY(277px)
-    //     opacity: 1
 
 
 // media query from smart phones and tablets, with max width 736px
