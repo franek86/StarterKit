@@ -45,10 +45,18 @@ gulp.task('scripts', function(){
         'assets/js/custom.js'
     ])
     .pipe(concat('all.js'))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('assets/js'))
     .pipe(reload({stream: true}));
 });
 
+/** minify all javascript **/
+gulp.task('minjs', function(){
+  return gulp.src('assets/js/all.js')
+    .pipe(uglify())
+    .pipe(rename('main.min.js'))
+    .pipe(gulp.dest('build/js'))
+    .pipe(reload({stream: true}));;
+});
 
 /** jade task **/
 gulp.task('jade', function(){
