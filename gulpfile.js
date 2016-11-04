@@ -7,7 +7,8 @@ var gulp    =   require('gulp'),
     jade    =   require('gulp-jade'),
     autoprefix    = require('gulp-autoprefixer'),
     browserSync = require('browser-sync'),
-    reload   =  browserSync.reload;
+    reload   =  browserSync.reload,
+    imagemin = require('gulp-imagemin');
 
 /** Wait for sass reload and launch server **/
 gulp.task('browser-sync', ['sass'], function(){
@@ -30,7 +31,7 @@ gulp.task('sass', function(){
             .pipe(autoprefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7']))
             .pipe(cleanCss())
             .pipe(rename('main.min.css'))
-            .pipe(gulp.dest('assets/css'))
+            .pipe(gulp.dest('build/css'))
             .pipe(reload({stream: true}));
 });
 
@@ -38,16 +39,13 @@ gulp.task('sass', function(){
 /** concat javascript bower_components bootstrap,jquery etc **/
 gulp.task('scripts', function(){
     return gulp.src([
-        'bower_components/angular/angular.min.js',
-        'bower_components/angular-route/angular-route.min.js',
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/waypoints/lib/jquery.waypoints.min.js',
-        'bower_components/jquery-animateNumber/jquery.animateNumber.min.js',
         'bower_components/bootstrap/dist/js/bootstrap.min.js',
         'assets/js/custom.js'
     ])
     .pipe(concat('all.js'))
-    .pipe(gulp.dest('assets/js'))
+    .pipe(gulp.dest('build/js'))
     .pipe(reload({stream: true}));
 });
 
@@ -64,6 +62,13 @@ gulp.task('jade', function(){
 gulp.task('index', function(){
   return gulp.src('./index.html')
     .pipe(reload({stream: true}));;
+});
+
+/** compressed images **/
+gulp.task('image', function(){
+  return gulp.src('assets/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('build/img'));
 });
 
 /** watch changes css, js, jade. html file **/

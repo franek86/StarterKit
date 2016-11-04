@@ -7,14 +7,14 @@ html(lang='en')
     title Frane's StartedKit
     
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='shortcut icon', href='assets/img/favicon.ico')
+    link(rel='shortcut icon', href='build/img/favicon.ico')
 
     // awesome font
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
     
     
     // custom css style
-    link(rel='stylesheet', href='assets/css/main.min.css')
+    link(rel='stylesheet', href='build/css/main.min.css')
     
   
 
@@ -25,5 +25,10 @@ html(lang='en')
           include includes/home-page.jade
       
         // all javascript from gulp task 'scripts'
-        script(src='assets/js/all.js')
+        script(src='build/js/all.js')
+        script(type='text/javascript').
+          $(window).on("load",function(){
+          $('.preloader').delay(500).fadeOut("slow").remove();
+          $('.intro').fadeIn("slow");
+          });
         
