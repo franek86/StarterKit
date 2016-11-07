@@ -83,7 +83,6 @@ gulp.task('image', function(){
 gulp.task('watch', function(){
     gulp.watch('assets/css/**/*', ['sass']);
     gulp.watch('assets/js/**/*.js', ['scripts']);
-    gulp.watch('build/js/main.min.js.js', ['minjs']);
     gulp.watch('./*.html').on('change', reload);
     gulp.watch(['./jade/includes/*.jade', './jade/*.jade'], ['jade']);
 });
