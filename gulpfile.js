@@ -46,16 +46,10 @@ gulp.task('scripts', function(){
     ])
     .pipe(concat('all.js'))
     .pipe(gulp.dest('assets/js'))
-    .pipe(reload({stream: true}));
-});
-
-/** minify all javascript **/
-gulp.task('minjs', function(){
-  return gulp.src('assets/js/all.js')
     .pipe(uglify())
     .pipe(rename('main.min.js'))
     .pipe(gulp.dest('build/js'))
-    .pipe(reload({stream: true}));;
+    .pipe(reload({stream: true}));
 });
 
 /** jade task **/
@@ -90,4 +84,4 @@ gulp.task('watch', function(){
 
 
 /** default task, running gulp **/
-gulp.task('default', ['browser-sync', 'scripts', 'minjs', 'jade','index','watch']);
+gulp.task('default', ['browser-sync', 'scripts', 'jade','index','watch']);
